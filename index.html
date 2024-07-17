@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" class="mdui-theme-dark">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="../photo/icon.png">
+	<link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/mdui/0.4.3/css/mdui.min.css">
+	<script src="https://cdn.staticfile.org/mdui/0.4.3/js/mdui.min.js">
+	</script>
+	<title> SMBRC </title>
+	<style>
+		body {
+		    display: flex;
+		    flex-direction: column;
+		    min-height: 100vh;
+		    font-family:
+		        Arial, sans-serif;
+		    background-color: #f4f4f4;
+		    margin: 0;
+		    padding: 0;
+		    
+		}
+		
+		header {
+		    background-color: #333;
+		    text-align: center;
+		    padding: 1em 0;
+		}
+		
+		floating-btn {
+		    position: fixed;
+		    right: 20px;
+		    bottom: 20px;
+		}
+		
+		nav {
+		    background-color:
+		        #444;
+		    color: #fff;
+		    text-align: center;
+		    padding: 0.5em 0;
+		}
+		
+		nav a {
+		    text-decoration:
+		        none;
+		    color: #fff;
+		    padding: 0 1em;
+		}
+		
+		section {
+		    padding: 20px;
+		    text-align:
+		        center;
+		}
+		
+		.mdui-tab {
+		    display: flex;
+		    justify-content: center;
+		}
+		
+		.mdui-theme-layout-dark {
+		    background-color: #333;
+		    color: #fff;
+		}
+		
+		main {
+		    /* 设置主要内容区域样式 */
+		    flex-grow:
+		        1;
+		    max-height: calc(100vh - 60px);
+		    overflow-y: auto;
+		    padding: 10px;
+		}
+		
+		footer {
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    height:
+		        60px;
+		    background-color: #f5f5f5;
+		}
+		
+		footer img {
+		    max-height: 100%;
+		    max-width:
+		        100%;
+		}
+	</style>
+</head>
+<body class="mdui-theme-primary-indigo">
+	<div class="mdui-toolbar mdui-color-theme">
+		<span class="mdui-typo-title" id="10">SMBRC 官网</span>
+		<div class="mdui-toolbar-spacer"></div>
+		<span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '设置主题'}" data-v-724d73df=""><i class="mdui-icon material-icons" data-v-724d73df="">color_lens</i></span>
+		<button class="mdui-btn mdui-btn-icon mdui-ripple nightVision mdui-text-color-white mdui-valign mdui-text-center" mdui-tooltip="{content: '切换日间/夜间模式'}" id="tgns" mdui-drawer-close="{target: '#left-drawer'}"><i class="mdui-icon material-icons"> brightness_4 </i>
+		</button>
+	</div>
+	<div class="mdui-container">
+		<div class="mdui-dialog" id="language">
+			<div class="mdui-dialog-title"> 请选择语言。 <br> Please select a language. </br>
+			</div>
+			<div class="mdui-dialog-content">
+			</div>
+			<div class="mdui-dialog-actions">
+				<button onclick="switchLanguage('zh')" class="mdui-btn mdui-ripple mdui-color-indigo" mdui-dialog-close> 简体中文 </button>
+				<button onclick="switchLanguage('en')" class="mdui-btn mdui-ripple mdui-color-indigo" mdui-dialog-confirm> English </button>
+			</div>
+		</div>
+	</div>
+	<header class="mdui-appbar">
+		<img src="../photo/top.png" alt="img" style="width: 100%; height: auto;">
+	</header>
+	<section>
+		<div class="mdui-card">
+			<div class="mdui-card-primary">
+				<div class="mdui-card-primary-title">
+					<h2 id="welcome"> 欢迎来到SMBRC官网 </h2>
+				</div>
+				<div id="introduction1" class="mdui-card-primary-subtitle"> 这是一段简单的介绍。</div>
+			</div>
+			<div class="mdui-card-content">
+				<h3 id="introduction2"> SMBRC是一款源于Godot引擎由EarthWork工作室开发的任天堂马力欧系列的同人游戏，在原作基础上不仅覆盖了大范围马力欧系列游戏，更新增了许多原创内容给玩家带来更多不一样体验。这款同人游戏目前处于测试阶段。</h3>
+				<h3 id="introduction3">-- earthwork 工作室 --</h3>
+			</div>
+			<div class="mdui-card-actions">
+				<a href="#download" id="download" class="mdui-btn mdui-ripple mdui-color-indigo"> 下载 </a>
+				<a href="#joinus" id="joinus" class="mdui-btn mdui-ripple mdui-color-indigo"> 加入我们 </a>
+			</div>
+		</div>
+		<div class="mdui-tab" mdui-tab>
+			<a href="#tab1" class="mdui-ripple">
+				<h2 id="home"> 主页</h2>
+			</a>
+			<a href="#tab2" class="mdui-ripple">
+				<h2 id="feature"> 游戏特点 </h2>
+			</a>
+			<a href="#tab3" class="mdui-ripple">
+				<h2 id="screenshot"> 游戏截图 </h2>
+			</a>
+			<a href="#tab4" class="mdui-ripple">
+				<h2 id="download1">下载 </h2>
+			</a>
+			<a href="#tab5" class="mdui-ripple">
+				<h2 id="about"> 关于 </h2>
+			</a>
+		</div>
+		<div id="tab1" class="mdui-tab-panel">
+			<h1 id="1"> 暂无 </h1>
+		</div>
+		<div id="tab2" class="mdui-tab-panel">
+			<h1 id="2"> 整个游戏都是特点 </h1>
+		</div>
+		<div id="tab4" class="mdui-tab-panel">
+			<h1 id="3"> 游戏测试中，暂无下载链接~ </h1>
+		</div>
+		<div id="tab3" class="mdui-tab-panel">
+			<img src="../SMBRC/photo/game_photo.jpg" alt="img" style="width: 100%; height: auto;">
+		</div>
+		<div id="tab5" class="mdui-tab-panel">
+			<div class="mdui-card">
+				<div class="mdui-card-primary">
+					<div class="mdui-card-primary-title" id="about1"> 关于 </div>
+				</div>
+				<div class="mdui-card-content">
+					<h1 id="4"> 游戏作者: </h1>
+					<a href="https://space.bilibili.com/661697840">
+						<div class="mdui-chip">
+							<img class="mdui-chip-icon" src="https://i2.hdslb.com/bfs/face/1c7572c40a224a580a7fb90ba707f6f62ac7a857.jpg">
+							<span class="mdui-chip-title"> ew_eee3 </span>
+						</div>
+					</a>
+					<h1 id="5"> 美工: </h1>
+					<a href="https://space.bilibili.com/2075067049">
+						<div class="mdui-chip">
+							<img class="mdui-chip-icon" src="https://i1.hdslb.com/bfs/face/70aead0085460288fe73355b3f9c939b1e42adc4.jpg">
+							<span class="mdui-chip-title"> 反草薙京_IganasukOyk </span>
+						</div>
+					</a>
+					<div class="mdui-chip">
+						<span class="mdui-chip-icon"> w </span>
+						<span class="mdui-chip-title"> wssbhh </span>
+					</div>
+					<h1 id="6"> 关卡设计 </h1>
+					<a href="https://space.bilibili.com/1943624050">
+						<div class="mdui-chip">
+							<img class="mdui-chip-icon" src="https://i1.hdslb.com/bfs/face/2b91030f1c0a740b7db1bf090662c091fed3fcd2.jpg">
+							<span class="mdui-chip-title"> 阿无oc </span>
+						</div>
+					</a>
+					<h1 id="7"> 其他贡献者： </h1>
+					<div class="mdui-chip">
+						<span class="mdui-chip-icon"> 阿 </span>
+						<span class="mdui-chip-title"> 阿远_pipebro </span>
+					</div>
+					<div class="mdui-chip">
+						<span class="mdui-chip-icon"> 多 </span>
+						<span class="mdui-chip-title"> 多多 </span>
+					</div>
+					<div class="mdui-chip">
+						<span class="mdui-chip-icon"> 亨 </span>
+						<span class="mdui-chip-title"> 亨少 </span>
+					</div>
+					<div class="mdui-chip">
+						<span class="mdui-chip-icon"> 你 </span>
+						<span class="mdui-chip-title"> 你ruigi大跌 </span>
+					</div>
+					<div class="mdui-chip">
+						<span class="mdui-chip-icon"> 西 </span>
+						<span class="mdui-chip-title"> 西夏笠谷 </span>
+					</div>
+					<h3 id="8"> 本网站的创建者 </h3>
+					<a href="https://space.bilibili.com/572522058">
+						<div class="mdui-chip">
+							<img class="mdui-chip-icon" src="https://i0.hdslb.com/bfs/face/31ea02f0cf331b68c684b87fb507b706016c5043.jpg">
+							<span class="mdui-chip-title"> 这个人不姓苏 </span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="mdui-card">
+			<div class="mdui-card-media">
+				<img src="../photo/bottom.png" alt="img">
+			</div>
+			<div class="mdui-card-content" id="9">
+				<span> 2023-2024 SMBRC官方网站 </span>
+			</div>
+		</div>
+	</footer>
+</body>
+<script>
+	document.addEventListener('DOMContentLoaded',
+	        function() {
+	            var inst = new mdui.Tab(document.querySelector('.mdui-tab'));
+	            var dialog = new mdui.Dialog('#language');
+	            dialog.open();
+	        });
+	function switchLanguage(lang) {
+	    if (lang === 'en') {
+	        document.getElementById('welcome').textContent = 'Welcome!';
+	        document.getElementById('introduction1').textContent = 'This is a short introduction.';
+	        document.getElementById('introduction2').textContent = 'SMB:RC is a fangame of the Super Mario Series by Nintendo powered by Godot engine. With the original as its basis, this game not only covers a wide range of Mario games, but also updates lots of original contents to bring more different experiences to the players.This game is in beta testing so far.';
+	        document.getElementById('introduction3').textContent = '-- earthwork studio --';
+	        document.getElementById('home').textContent = 'Home';
+	        document.getElementById('download').textContent = 'download';
+	        document.getElementById('download1').textContent = 'download';
+	        document.getElementById('feature').textContent = 'Game Feature';
+	        document.getElementById('screenshot').textContent = 'Game Screenshot';
+	        document.getElementById('about').textContent = 'About';
+	        document.getElementById('about1').textContent = 'About';
+	        document.getElementById('joinus').textContent = 'Join us';
+	        document.getElementById('1').textContent = 'Nothing';
+	        document.getElementById('2').textContent = 'The whole game is characteristic';
+	        document.getElementById('3').textContent = 'In game testing,there is no download link.';
+	        document.getElementById('4').textContent = 'Game Maker';
+	        document.getElementById('5').textContent = 'Art Design';
+	        document.getElementById('6').textContent = 'Level Design';
+	        document.getElementById('7').textContent = 'Other Contributors';
+	        document.getElementById('8').textContent = 'Creator Of This Website';
+	        document.getElementById('9').textContent = '2023-2024 SMBRC Official Website';
+	        document.getElementById('10').textContent = 'SMBRC Official Website';
+	        
+	    } 
+	    else if (lang === 'zh') {
+	        document.getElementById('welcome').textContent = '欢迎来到SMBRC官网';
+	        document.getElementById('introduction1').textContent = '这是一段简单的介绍。';
+	        document.getElementById('introduction2').textContent = 'SMBRC是一款源于Godot引擎由EarthWork工作室开发的任天堂马力欧系列的同人游戏，在原作基础上不仅覆盖了大范围马力欧系列游戏，更新增了许多原创内容给玩家带来更多不一样体验。这款同人游戏目前处于测试阶段。';
+	        document.getElementById('introduction3').textContent = '-- earthwork 工作室 --';
+	        document.getElementById('home').textContent = '主页';
+	        document.getElementById('download').textContent = '下载';
+	        document.getElementById('download1').textContent = '下载';
+	        document.getElementById('feature').textContent = '游戏特点';
+	        document.getElementById('screenshot').textContent = '游戏截图';
+	        document.getElementById('about').textContent = '关于';
+	        document.getElementById('1').textContent = '暂无';
+	        document.getElementById('2').textContent = '整个游戏都是特点。';
+	        document.getElementById('3').textContent = '游戏测试中，暂无下载链接~ ';
+	        document.getElementById('4').textContent = '游戏作者';
+	        document.getElementById('5').textContent = '美工';
+	        document.getElementById('6').textContent = '关卡设计';
+	        document.getElementById('7').textContent = '其他贡献者';
+	        document.getElementById('8').textContent = '本网站的创建者';
+	        document.getElementById('9').textContent = '2023-2024 SMBRC 官网';
+	        document.getElementById('10').textContent = 'SMBRC 官网';   
+		}
+	   }
+</script>
+</html>
